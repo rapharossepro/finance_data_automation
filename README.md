@@ -51,12 +51,12 @@ git clone https://github.com/rapharossepro/finance_data_automation.git
 cd finance_data_automation
 ```
 
-2. Crie um ambiente virtual (opcional, mas recomendado):
+2. (Opcional) Crie um ambiente virtual:
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+venv\Scripts\activate   # Windows
+source venv/bin/activate  # macOS/Linux
 ```
 
 3. Instale as dependências:
@@ -71,7 +71,37 @@ pip install -r requirements.txt
 python main.py
 ```
 
-5. Veja os resultados nas pastas `data/` e `reports/`
+---
+
+## 📊 Como acessar os dados gerados
+
+Após executar o script, os seguintes arquivos serão criados automaticamente:
+
+| Tipo de Arquivo | Caminho               | Conteúdo                                                                 |
+|-----------------|------------------------|--------------------------------------------------------------------------|
+| 📄 CSV          | `data/`                | Dados brutos da ação minuto a minuto                                     |
+| 📈 PNG          | `reports/`             | Gráfico de variação do preço intradiário                                 |
+| 📘 Excel        | `reports/`             | Planilha com os dados + gráfico embutido automaticamente (em `H2`)       |
+
+### 🧪 Exemplo de nomes gerados:
+
+```
+data/PETR4.SA_2025-06-14_21-30-55.csv
+reports/PETR4.SA_2025-06-14_21-30-55.png
+reports/PETR4.SA_2025-06-14_21-30-55.xlsx
+```
+
+> Os nomes dos arquivos incluem a data e hora em que foram gerados.
+
+---
+
+## 🔁 Personalização
+
+Você pode alterar o ticker (ação) dentro do `main.py`:
+
+```python
+ticker = "PETR4.SA"  # Ex: VALE3.SA, ITUB4.SA, AAPL, TSLA etc.
+```
 
 ---
 
